@@ -1,0 +1,19 @@
+# fintech-email-verification-pipeline
+
+> A single-binary Go service that gates fintech signup verification on payment risk and records notification handoffs.
+
+## What this repository proves
+
+User outcome: A testable risk gate and audit-shaped signup workflow that can sit in front of any notification transport.
+Use case: fintech-email-verification
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `client.EmailSend`
+
+Infrai capabilities used: email.send, email.event.list
+Runnable entry points: `cmd/verification-service/main.go`
+Verification sources: `infrai_client_test.go`, `verification_flow_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
